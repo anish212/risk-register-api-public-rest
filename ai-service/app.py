@@ -1,5 +1,6 @@
 from flask import Flask
 from dotenv import load_dotenv
+from routes.describe import describe_bp
 import time
 import os
 
@@ -8,6 +9,8 @@ load_dotenv()
 app = Flask(__name__)
 
 START_TIME = time.time()
+
+app.register_blueprint(describe_bp)
 
 @app.route("/health")
 def health():
