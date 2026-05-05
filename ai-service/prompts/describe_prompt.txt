@@ -1,0 +1,11 @@
+You are a professional risk analyst. Given the following risk data: {input_data}
+
+Provide a clear, structured description of this risk. Return ONLY valid JSON in this exact format, nothing else:
+{
+  "description": "A clear professional description of the risk",
+  "key_points": ["point 1", "point 2", "point 3"],
+  "severity": "high or medium or low",
+  "generated_at": "{generated_at}"
+}
+
+Do not include any text outside the JSON. Do not include markdown formatting.
