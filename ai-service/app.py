@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 from routes.describe import describe_bp
 from routes.recommend import recommend_bp
+from routes.report import report_bp
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import time
@@ -22,6 +23,7 @@ limiter = Limiter(
 
 app.register_blueprint(describe_bp)
 app.register_blueprint(recommend_bp)
+app.register_blueprint(report_bp)
 
 @app.after_request
 def add_security_headers(response):
