@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from routes.describe import describe_bp
 from routes.recommend import recommend_bp
 from routes.report import report_bp
+from services.groq_client import get_avg_response_time
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import time
@@ -35,11 +36,12 @@ def add_security_headers(response):
 
 @app.route("/health")
 def health():
-    return {
+    return jsonify({
         "status": "ok",
         "model": "llama-3.3-70b-versatile",
-        "uptime_seconds": int(time.time() - START_TIME)
-    }
+        "uptime_seconds": int(time.time() - START_TIME),
+        "avg_response_time_seconds": get_avg_response_time()
+    })
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
