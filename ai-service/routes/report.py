@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from services.groq_client import call_groq
+from services.groq_client import call_groq_cached
 from datetime import datetime, timezone
 import json
 import bleach
@@ -23,7 +23,7 @@ def generate_report():
 
     prompt = template.replace("{input_data}", clean_input)
 
-    result = call_groq(prompt, temperature=0.5)
+    result = call_groq_cached(prompt, temperature=0.5)
 
     if result is None:
         return jsonify({
