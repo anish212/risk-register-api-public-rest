@@ -1,0 +1,15 @@
+[33mde2fc3e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32manish-ai-developer-1[m[33m, [m[1;31morigin/anish-ai-developer-1[m[33m)[m Day 14 - Created demo script, completed AI dry run, all endpoints verified
+[33m2b491f3[m Day 13 - Finalised Dockerfile, pinned requirements versions, updated README
+[33me2534a9[m Day 12 - Updated SECURITY.md, added .env.example, verified all endpoints
+[33m262b3a3[m Day 11 - Added injection detection, error handlers, extra security headers, fixed tests
+[33mcd2da4a[m Day 10 - Added ai-service README with setup, env vars and API reference
+[33m4a6c171[m Day 9 - Added Redis caching to all endpoints, response time under 2s
+[33m339881a[m Day 8 - Added 8 pytest unit tests, all passing
+[33mbd5d307[m Day 7 - Updated /health endpoint, added Redis caching with fallback
+[33m3369e47[m Day 6 - Built POST /generate-report endpoint with structured JSON response
+[33m195fa8e[m Day 5 - Added rate limiting, security headers, Dockerfile
+[33m1692a82[m Day 4 - Built POST /recommend endpoint with 3 recommendations
+[33m024ba77[m Day 3 - Built POST /describe endpoint with input validation and fallback
+[33ma3b0409[m Day 2 - Groq API setup, groq_client.py, describe prompt template
+[33m0110701[m Day 1 - Flask setup, folder structure, app.py entry point
+[33m8903c76[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m Add README.md
