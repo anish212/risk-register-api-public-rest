@@ -11,6 +11,21 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 response_times = []
 
+INJECTION_KEYWORDS = [
+    "ignore previous instructions",
+    "ignore all instructions",
+    "disregard",
+    "you are now",
+    "act as",
+    "jailbreak",
+    "pretend you are",
+    "forget your instructions"
+]
+
+def is_injection(text: str) -> bool:
+    lower = text.lower()
+    return any(keyword in lower for keyword in INJECTION_KEYWORDS)
+
 def call_groq(prompt: str, temperature=0.3) -> str:
     for attempt in range(3):
         try:

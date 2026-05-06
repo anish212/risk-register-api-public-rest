@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from services.groq_client import call_groq_cached
+from services.groq_client import call_groq_cached, is_injection
 from datetime import datetime, timezone
 import json
 import bleach
@@ -17,6 +17,9 @@ def generate_report():
 
     if not clean_input.strip():
         return jsonify({"error": "input cannot be empty"}), 400
+
+    if is_injection(clean_input):
+        return jsonify({"error": "invalid input detected"}), 400
 
     with open("prompts/report_prompt.txt") as f:
         template = f.read()

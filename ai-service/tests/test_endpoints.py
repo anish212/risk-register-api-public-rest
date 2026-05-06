@@ -68,7 +68,7 @@ def test_describe_success(mock_groq, client):
     assert "description" in data
 
 # Test 5 - Describe handles Groq failure gracefully
-@patch("routes.describe.call_groq", return_value=None)
+@patch("routes.describe.call_groq_cached", return_value=None)
 def test_describe_groq_failure(mock_groq, client):
     response = client.post("/describe",
         data=json.dumps({"input": "Server downtime risk"}),
