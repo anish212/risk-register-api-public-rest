@@ -69,4 +69,5 @@ All team members have reviewed and signed off on this document.
 | (Member 4) | AI Developer 2 | Pending |
 | (Member 5) | Security Reviewer | Pending |
 
-Last updated: May 2026
+Last updated: 7 May 2026
+Final sign-off: AI Developer 1 — Anish — confirmed all security measures tested and working.
